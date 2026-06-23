@@ -6,10 +6,9 @@ from tabulate import tabulate
 DB_NAME = 'Football_girls_team_info.db'
 
 # This is the SQL to connect to all the tables in the database - only needed if you are using a parameter query (Excellence)
-TABLES = (" fast_cars "
-           "LEFT JOIN makes ON fast_cars.make_id = makes.make_id "
-           "LEFT JOIN aspiration ON fast_cars.aspiration_id = aspiration.aspiration_id "
-           "LEFT JOIN cylinders ON fast_cars.cylinders_id = cylinders.cylinders_id ")
+TABLES = (" Football_team_info "
+           "LEFT JOIN Goals_scored ON Football_team_info.Goals_scored_id = Goals_scored.Goals_scored_id "
+           "LEFT JOIN Positions ON Football_team_info.Position_id = Positions.Position_id ")
 
 
 def print_query(view_name:str):
@@ -40,4 +39,4 @@ def print_parameter_query(fields:str, where:str, parameter):
     results = cursor.fetchall()
     print(tabulate(results,fields.split(",")))
     db.close()  
-
+    
