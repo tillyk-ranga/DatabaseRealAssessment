@@ -39,4 +39,15 @@ def print_parameter_query(fields:str, where:str, parameter):
     results = cursor.fetchall()
     print(tabulate(results,fields.split(",")))
     db.close()  
-    
+
+
+menu_choice = ''
+while menu_choice != "Z":
+    menu_choice = input('Welcome to the FC twenty eleven U15 girls football team database!\n\n'
+                        'Type the letter for the information you want:\n'
+                        'A: All_data\n'
+                        'B: Club_veterans\n'
+                        'C: Girls_injuries\n'
+                        'D: No_shirt_num\n'
+                        'E: Scout_qualifications\n'
+                        '')
